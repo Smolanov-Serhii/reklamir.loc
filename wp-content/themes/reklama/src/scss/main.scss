@@ -1,0 +1,331 @@
+@import "default";
+@import "variables";
+@import "mixins";
+@import "grid";
+@import "normalize";
+@import "fonts";
+@import "selectric";
+@import "fresco";
+@import "swiper-bundle";
+@import "aos";
+$transition: 0.3s ease;
+$maxwindow: 1920px;
+:root{
+  scroll-behavior: smooth;
+}
+// GENERAL DOCUMENT STYLES
+* {
+  box-sizing: border-box;
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+}
+html{
+  font-family: "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  font-size: 10px;
+  scroll-behavior: initial;
+}
+
+body{
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  &.locked{
+    height: 100vh;
+    overflow: hidden;
+    @media all and (max-width: 500px){
+      height: auto;
+    }
+    &:before{
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+  &:before{
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;
+    transition: 0.3s ease-in-out;
+  }
+  .site{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  main{
+    flex: 1;
+  }
+}
+img{
+  max-width: 100%;
+}
+
+.padding-right{
+  padding-right: 270px;
+  @media all and (max-width: $maxwindow){
+    padding-right: px(270);
+  }
+  @media all and (max-width: 1440px){
+    padding-right: px(125);
+  }
+  @media all and (max-width: 1280px){
+    padding-right: px(100);
+  }
+  @media all and (max-width: 1024px){
+    padding-right: px(75);
+  }
+  @media all and (max-width: 768px){
+    padding-right: px(50);
+  }
+  @media all and (max-width: 500px){
+    padding-right: px(20);
+  }
+}
+.padding-left{
+  padding-left: 270px;
+  @media all and (max-width: $maxwindow){
+    padding-left: px(270);
+  }
+  @media all and (max-width: 1440px){
+    padding-left: px(125);
+  }
+  @media all and (max-width: 1280px){
+    padding-left: px(100);
+  }
+  @media all and (max-width: 1024px){
+    padding-left: px(75);
+  }
+  @media all and (max-width: 768px){
+    padding-left: px(50);
+  }
+  @media all and (max-width: 500px){
+    padding-left: px(20);
+  }
+}
+.main-container{
+  max-width: $maxwindow;
+  margin: auto;
+  width: 100%;
+  @extend .padding-left;
+  @extend .padding-right;
+}
+.section-title{
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1A2B50;
+  font-weight: 600;
+  line-height: 121%;
+  text-align: center;
+  text-transform: uppercase;
+  @media all and (max-width: $maxwindow){
+    font-size: px(32);
+    margin-bottom: px(20);
+  }
+  @media all and (max-width: 500px){
+    font-size: px(20);
+    margin-bottom: px(30);
+  }
+}
+.main-title{
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #1A2B50;
+  text-align: left;
+  font-weight: 700;
+  line-height: 121%;
+    @media all and (max-width: $maxwindow){
+      font-size: px(48);
+      margin-bottom: px(20);
+    }
+ }
+.section-subtitle{
+  font-size: 20px;
+  color: #00292C;
+  margin-bottom: 57px;
+  line-height: normal;
+  @media all and (max-width: $maxwindow){
+    font-size: px(20);
+    margin-bottom: px(57);
+  }
+  @media all and (max-width: 768px){
+    font-size: px(18);
+  }
+  @media all and (max-width: 500px){
+    font-size: px(16);
+  }
+}
+
+a.button, div.button, button.button, input.button, .wpcf7-submit{
+  height: 70px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  min-width: 155px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  @media all and (max-width: $maxwindow){
+    height: px(70);
+    border-radius: px(6);
+    padding: px(12) px(20);
+    min-width: px(155);
+  }
+  @media all and (max-width: 500px){
+    padding: px(10) px(20);
+    height: px(55);
+    border-radius: px(5);
+  }
+  &:hover{
+    svg{
+      animation-name: jump;
+      animation-duration: 0.4s;
+      transform: rotate(45deg);
+    }
+  }
+  svg{
+    width: 18px;
+    height: auto;
+    position: absolute;
+    top: calc(50% - px(9));
+    right: 16px;
+    animation-name: jump-back;
+    animation-duration: 0.4s;
+    transform: rotate(0deg);
+    @media all and (max-width: $maxwindow){
+      height: px(18);
+      width: auto;
+      right: px(16);
+    }
+    @media all and (max-width: 500px){
+      height: px(14);
+      top: calc(50% - px(7));
+    }
+  }
+  span{
+    font-size: 14px;
+    transition: 0.3s ease-in-out;
+    border-radius: 6px;
+    font-weight: 500;
+    @media all and (max-width: $maxwindow){
+      font-size: px(14);
+      border-radius: px(6);
+    }
+    @media all and (max-width: 500px){
+      font-size: px(17);
+      font-weight: 400;
+    }
+  }
+  &__blue{
+    background-color: #114BC8;
+    border: 1px solid #114BC8;
+    span{
+      color: #FFFFFF;
+    }
+    &:hover{
+      background-color: #417DFF;
+      border: 1px solid #417DFF;
+    }
+  }
+  &__dark{
+    background-color: #1A2B50;
+    border: 1px solid #1A2B50;
+    span{
+      color: #FFFFFF;
+    }
+  }
+  &__stroke{
+    background-color: #FFFFFF;
+    border: 1px solid #1A2B50;
+    &:hover{
+      background-color: #1A2B50;
+      span{
+        color: #FFFFFF;
+      }
+    }
+    span{
+      color: #1A2B50;
+    }
+  }
+}
+a{
+  color: #1A2B50;
+}
+.wpcf7-form{
+  input:focus {
+    //background-color: lightblue;
+  }
+  label{
+    position: relative;
+    .placeholder{
+      top: -10px;
+      left: 0;
+      font-size: 12px;
+    }
+  }
+  .wpcf7-not-valid{
+    border: 1px solid #114BC8;
+  }
+  .wpcf7-not-valid-tip{
+    position: absolute;
+    background-color: #114BC8;
+    color: white;
+    border-radius: 20px;
+    bottom: -30px;
+    top: auto!important;
+    left: 48px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 20px;
+    font-size: 12px;
+    width: auto;
+    @media all and (max-width: $maxwindow){
+      bottom: px(-30);
+      left: px(48);
+      height: px(22);
+      padding: 0 px(20);
+      font-size: px(12);
+    }
+    @media all and (max-width: 500px){
+      font-size: px(10);
+      height: px(18);
+      left: auto;
+      right: px(10);
+      bottom: px(-20);
+    }
+  }
+}
+
+.wpcf7-response-output, .wpcf7-spinner{
+  display: none!important;
+}
+.wpcf7-form{
+  input.wpcf7-submit:focus{
+    background-color: #417dff;
+  }
+}
+
+
+
+@import "templates/preloader";
+@import "templates/header";
+@import "templates/404";
+
+
