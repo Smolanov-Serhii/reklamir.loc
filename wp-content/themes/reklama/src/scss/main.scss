@@ -4,10 +4,10 @@
 @import "grid";
 @import "normalize";
 @import "fonts";
-@import "selectric";
-@import "fresco";
+//@import "selectric";
+//@import "fresco";
 @import "swiper-bundle";
-@import "aos";
+//@import "aos";
 $transition: 0.3s ease;
 $maxwindow: 1920px;
 :root{
@@ -21,10 +21,10 @@ $maxwindow: 1920px;
   font-feature-settings: 'pnum' on, 'lnum' on;
 }
 html{
-  font-family: "Poppins", sans-serif;
-  font-optical-sizing: auto;
+  font-family: "PT Sans", serif;
   font-weight: 400;
   font-style: normal;
+  font-optical-sizing: auto;
   font-variation-settings: "slnt" 0;
   font-size: 10px;
   scroll-behavior: initial;
@@ -35,6 +35,11 @@ body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  .site{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
   &.locked{
     height: 100vh;
     overflow: hidden;
@@ -326,6 +331,8 @@ a{
 
 @import "templates/preloader";
 @import "templates/header";
+@import "templates/banner";
+@import "templates/column";
 @import "templates/404";
 
 

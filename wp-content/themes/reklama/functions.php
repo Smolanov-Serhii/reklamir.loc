@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( '_S_VERSION', '1.0.1' );
 }
 
 /**
@@ -90,15 +90,15 @@ function reklama_setup() {
 //	 *
 //	 * @link https://codex.wordpress.org/Theme_Logo
 //	 */
-//	add_theme_support(
-//		'custom-logo',
-//		array(
-//			'height'      => 250,
-//			'width'       => 250,
-//			'flex-width'  => true,
-//			'flex-height' => true,
-//		)
-//	);
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 250,
+			'width'       => 250,
+			'flex-width'  => true,
+			'flex-height' => true,
+		)
+	);
 }
 add_action( 'after_setup_theme', 'reklama_setup' );
 
@@ -141,6 +141,9 @@ function reklama_scripts() {
 	wp_enqueue_style( 'reklama-style', get_template_directory_uri() . '/dist/css/style.css', array(), _S_VERSION );
 	wp_style_add_data( 'reklama-style', 'rtl', 'replace' );
 	wp_enqueue_script( 'reklama-scripts', get_template_directory_uri() . '/dist/js/common.js', array(), _S_VERSION, true );
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'reklama_scripts' );
 
@@ -162,7 +165,7 @@ add_action( 'wp_enqueue_scripts', 'reklama_scripts' );
 /**
  * Customizer additions.
  */
-//require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.

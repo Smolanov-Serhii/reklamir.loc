@@ -24,45 +24,19 @@ $(document).ready(function () {
         }
     });
 
-    if ($('.brands.swiper-container').length) {
-        var BrabdCarusel = new Swiper(".brands.swiper-container", {
+    if ($('.banner').length) {
+        var BannerCarusel = new Swiper(".banner .swiper-container", {
             slidesPerView: 1,
-            spaceBetween: 20,
+            spaceBetween: 0,
             loop: 'true',
-            speed: 6000,
-            autoplay: {
-                delay: 1,
+            speed: 1000,
+            navigation: {
+                nextEl: ".banner .banner__next",
+                prevEl: ".banner .banner__prev",
             },
-            breakpoints: {
-                240: {
-                    spaceBetween: 10,
-                    centeredSlides: true,
-                    speed: 3000,
-                    slidesPerView: 2.2,
-                },
-                500: {
-                    spaceBetween: 20,
-                    centeredSlides: true,
-                    speed: 3000,
-                    slidesPerView: 2.2,
-                },
-                640: {
-                    spaceBetween: 20,
-                    centeredSlides: true,
-                    speed: 3000,
-                    slidesPerView: 4.2,
-                },
-                768: {
-                    spaceBetween: 20,
-                    centeredSlides: true,
-                    allowTouchMove: true,
-                    speed: 3000,
-                    slidesPerView: 5,
-                },
-                1024: {
-
-                },
-            }
+            autoplay: {
+                delay: 5000,
+            },
         });
     }
 
