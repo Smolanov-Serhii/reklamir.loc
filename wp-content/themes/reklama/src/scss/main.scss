@@ -77,7 +77,35 @@ body{
 img{
   max-width: 100%;
 }
-
+.main{
+  &__breadcrumbs{
+    height: 66px;
+    background-color: #F6F6F6;
+    margin-bottom: 20px;
+    @media all and (max-width: $maxwindow){
+      height: px(66);
+      margin-bottom: px(20);
+    }
+    .main-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      .left{
+        font-size: 30px;
+        @media all and (max-width: $maxwindow){
+          font-size: px(30);
+        }
+      }
+      .right{
+        font-size: 13px;
+        @media all and (max-width: $maxwindow){
+          font-size: px(13);
+        }
+      }
+    }
+  }
+}
 .padding-right{
   padding-right: 270px;
   @media all and (max-width: $maxwindow){
@@ -120,6 +148,18 @@ img{
     padding-left: px(20);
   }
 }
+p{
+  font-size: 13px;
+  color: #666666;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: normal;
+  text-align: center;
+  @media all and (max-width: $maxwindow){
+    font-size: px(13);
+    margin-bottom: px(20);
+  }
+}
 .main-container{
   max-width: $maxwindow;
   margin: auto;
@@ -128,146 +168,66 @@ img{
   @extend .padding-right;
 }
 .section-title{
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #1A2B50;
-  font-weight: 600;
-  line-height: 121%;
-  text-align: center;
-  text-transform: uppercase;
-  @media all and (max-width: $maxwindow){
-    font-size: px(32);
-    margin-bottom: px(20);
-  }
-  @media all and (max-width: 500px){
-    font-size: px(20);
-    margin-bottom: px(30);
-  }
-}
-.main-title{
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: #1A2B50;
-  text-align: left;
+  font-style: normal;
   font-weight: 700;
-  line-height: 121%;
+  font-size: 48px;
+  line-height: 30px;
+  color: #005692;
+  margin-bottom: 15px;
+  text-align: center;
     @media all and (max-width: $maxwindow){
       font-size: px(48);
-      margin-bottom: px(20);
+      line-height: px(30);
+      margin-bottom: px(15);
     }
+  &.border{
+    padding-bottom: 20px;
+    position: relative;
+    @media all and (max-width: $maxwindow){
+      padding-bottom: px(20);
+    }
+    &:before{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: calc(50% - 280px);
+      width: 560px;
+      height: 1px;
+      background-color: #D0D0D0;
+      @media all and (max-width: $maxwindow){
+        width: px(560);
+        left: calc(50% - px(280));
+      }
+    }
+  }
  }
-.section-subtitle{
-  font-size: 20px;
-  color: #00292C;
-  margin-bottom: 57px;
-  line-height: normal;
+.section-undertitle{
+  font-style: normal;
+  font-weight: 400;
+  font-size: 31px;
+  line-height: 40px;
+  color: #333333;
+  margin-bottom: 10px;
   @media all and (max-width: $maxwindow){
-    font-size: px(20);
-    margin-bottom: px(57);
+    font-size: px(31);
+    line-height: px(40);
+    margin-bottom: px(10);
   }
-  @media all and (max-width: 768px){
-    font-size: px(18);
-  }
-  @media all and (max-width: 500px){
-    font-size: px(16);
+}
+.section-subtitle{
+  font-size: 13px;
+  color: #666666;
+  font-weight: 400;
+  margin-bottom: 20px;
+  line-height: normal;
+  text-align: center;
+  @media all and (max-width: $maxwindow){
+    font-size: px(13);
+    margin-bottom: px(20);
   }
 }
 
-a.button, div.button, button.button, input.button, .wpcf7-submit{
-  height: 70px;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
-  text-decoration: none;
-  min-width: 155px;
-  position: relative;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  @media all and (max-width: $maxwindow){
-    height: px(70);
-    border-radius: px(6);
-    padding: px(12) px(20);
-    min-width: px(155);
-  }
-  @media all and (max-width: 500px){
-    padding: px(10) px(20);
-    height: px(55);
-    border-radius: px(5);
-  }
-  &:hover{
-    svg{
-      animation-name: jump;
-      animation-duration: 0.4s;
-      transform: rotate(45deg);
-    }
-  }
-  svg{
-    width: 18px;
-    height: auto;
-    position: absolute;
-    top: calc(50% - px(9));
-    right: 16px;
-    animation-name: jump-back;
-    animation-duration: 0.4s;
-    transform: rotate(0deg);
-    @media all and (max-width: $maxwindow){
-      height: px(18);
-      width: auto;
-      right: px(16);
-    }
-    @media all and (max-width: 500px){
-      height: px(14);
-      top: calc(50% - px(7));
-    }
-  }
-  span{
-    font-size: 14px;
-    transition: 0.3s ease-in-out;
-    border-radius: 6px;
-    font-weight: 500;
-    @media all and (max-width: $maxwindow){
-      font-size: px(14);
-      border-radius: px(6);
-    }
-    @media all and (max-width: 500px){
-      font-size: px(17);
-      font-weight: 400;
-    }
-  }
-  &__blue{
-    background-color: #114BC8;
-    border: 1px solid #114BC8;
-    span{
-      color: #FFFFFF;
-    }
-    &:hover{
-      background-color: #417DFF;
-      border: 1px solid #417DFF;
-    }
-  }
-  &__dark{
-    background-color: #1A2B50;
-    border: 1px solid #1A2B50;
-    span{
-      color: #FFFFFF;
-    }
-  }
-  &__stroke{
-    background-color: #FFFFFF;
-    border: 1px solid #1A2B50;
-    &:hover{
-      background-color: #1A2B50;
-      span{
-        color: #FFFFFF;
-      }
-    }
-    span{
-      color: #1A2B50;
-    }
-  }
-}
 a{
   color: #1A2B50;
 }
@@ -327,12 +287,46 @@ a{
   }
 }
 
+.button{
+  padding: 8px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  @media all and (max-width: $maxwindow){
+    padding: px(8) px(20);
+  }
+  &-blue{
+    background-color: #005692;
+    span{
+      color: #FFFFFF;
+    }
+  }
+  span{
+    font-size: 14px;
+    @media all and (max-width: $maxwindow){
+      font-size: px(14);
+    }
+  }
+  svg{
+    margin-left: 6px;
+    @media all and (max-width: $maxwindow){
+      margin-left: px(6);
+    }
+  }
+}
 
 
 @import "templates/preloader";
 @import "templates/header";
 @import "templates/banner";
 @import "templates/column";
+@import "templates/works";
+@import "templates/design";
+@import "templates/product";
+@import "templates/services";
+@import "templates/comments";
+@import "templates/all-portfolio";
 @import "templates/404";
+@import "templates/footer";
 
 

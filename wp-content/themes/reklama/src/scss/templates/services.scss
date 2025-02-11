@@ -1,0 +1,99 @@
+.services{
+  &__container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__aside{
+    width: 370px;
+    padding-top: 30px;
+    @media all and (max-width: $maxwindow){
+      width: px(370);
+      padding-top: px(30);
+    }
+  }
+  &__content{
+    width: calc(100% - 400px);
+    @media all and (max-width: $maxwindow){
+      width: calc(100% - px(400))
+    }
+  }
+  &__category{
+    padding: 11px;
+    @media all and (max-width: $maxwindow){
+      padding: px(11);
+    }
+    &-name{
+      font-size: 22px;
+      margin-bottom: 8px;
+      color: #005692;
+      @media all and (max-width: $maxwindow){
+        font-size: px(22);
+        margin-bottom: px(8);
+      }
+    }
+    &-list{
+
+    }
+    &-item{
+      a{
+        text-decoration: none;
+        font-size: 13px;
+        line-height: 22px;
+        color: #333333;
+        @media all and (max-width: $maxwindow){
+          font-size: px(13);
+          line-height: px(22);
+        }
+      }
+    }
+  }
+  &__title{
+    text-align: left;
+  }
+  &__subtitle{
+    padding: 30px 0;
+    text-align: left;
+    border-top: 2px solid #B4B4B4;
+    margin-top: 30px;
+    font-weight: 600;
+    @media all and (max-width: $maxwindow){
+      padding: px(30) 0;
+      border-top: 1px solid #B4B4B4;
+      margin-top: px(30);
+    }
+    span{
+      padding-left: 20px;
+      border-left: 5px solid #EEEEEE;
+      font-size: 16px;
+      font-style: italic;
+      color: #0457A7;
+      @media all and (max-width: $maxwindow){
+        padding-left: px(20);
+        border-left: px(5) solid #EEEEEE;
+        font-size: px(16);
+      }
+    }
+  }
+  &__block{
+    text-align: left;
+    p, span, li, span{
+      text-align: left;
+      font-size: 14px;
+      line-height: 20px;
+      margin-bottom: 1em;
+      color: #666666;
+      @media all and (max-width: $maxwindow){
+        font-size: px(14);
+        line-height: px(20);
+      }
+    }
+    span{
+      text-align: left;
+      margin: 0 0 20px 0;
+      @media all and (max-width: $maxwindow){
+        margin: 0 0 px(20) 0;
+      }
+    }
+  }
+}

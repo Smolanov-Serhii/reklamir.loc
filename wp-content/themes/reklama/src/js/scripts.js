@@ -40,6 +40,16 @@ $(document).ready(function () {
         });
     }
 
+    function SliderTabs(){
+        if($('.design__main').length){
+            $('.design__prev-item').click(function() {
+                $(this).addClass("active");
+                $(this).closest(".design__left").find('.design__main-item').hide().removeClass("active").eq($(this).index()).addClass("active").fadeIn();
+            })
+        }
+    }
+    SliderTabs();
+
 
 });
 

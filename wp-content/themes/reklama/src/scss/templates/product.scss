@@ -1,0 +1,49 @@
+.product{
+  background-color: #EDEDED;
+  padding: 40px 0;
+  @media all and (max-width: $maxwindow){
+    padding: px(40) 0;
+  }
+  &__title{
+    margin-bottom: 40px;
+    @media all and (max-width: $maxwindow){
+      margin-bottom: px(40);
+    }
+  }
+  &__content{
+    *{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 20px;
+      color: #666666;
+      @media all and (max-width: $maxwindow){
+        column-width: px(360);
+        font-size: px(13);
+        line-height: px(20);
+      }
+    }
+    a{
+      color: #7EA8F0;
+    }
+    em{
+      font-size: 20px;
+      @media all and (max-width: $maxwindow){
+        font-size: px(20);
+      }
+      span{
+        font-size: inherit;
+        font-weight: bolder;
+      }
+    }
+    p{
+      margin-bottom: 1em;
+    }
+    column-width: 360px;
+    column-gap: 30px;
+    @media all and (max-width: $maxwindow){
+      column-gap: px(30);
+      column-width: px(360);
+    }
+  }
+}
