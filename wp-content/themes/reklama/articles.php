@@ -15,15 +15,16 @@ $post_id = get_the_ID();
                     <?php the_title();?>
                 </div>
             </div>
+            <div class="main__breadcrumbs-banner">
+                <a href="#">
+                    <img src="">
+                </a>
+            </div>
         </div>
         <section class="services">
             <div class="services__container main-container">
                 <?php get_template_part( 'template-parts/content', 'category-nav' ); ?>
                 <div class="services__content">
-                    <h1 class="services__title section-title">
-                        <?php the_title();?>
-                    </h1>
-                    <p class="services__subtitle"><span><?php echo get_field('podzagolovok', $post_id)?></span></p>
                     <div class="services__blick">
                         <?php the_content();?>
                     </div>

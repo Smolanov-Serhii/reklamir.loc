@@ -27,9 +27,9 @@ $post_id = get_the_ID();
                     <div class="services__blick">
                         <?php the_content();?>
                     </div>
-<!--                    <div class="services__comments">-->
-<!--                        --><?php //comments_template(); ?>
-<!--                    </div>-->
+                    <div class="services__comments">
+
+                    </div>
                 </div>
             </div>
         </section>

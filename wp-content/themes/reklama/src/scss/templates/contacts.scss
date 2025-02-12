@@ -1,0 +1,148 @@
+.contacts{
+  &__title{
+    text-align: left;
+  }
+  &__main{
+    margin-bottom: 20px;
+    @media all and (max-width: $maxwindow){
+      margin-bottom: px(20);
+    }
+    &-title{
+      border-top: 1px solid #B4B4B4;
+      padding-top: 20px;
+      font-size: 24px;
+      color: #004D80;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      @media all and (max-width: $maxwindow){
+        padding-top: px(20);
+        margin-top: px(30);
+        margin-bottom: px(10);
+      }
+    }
+    &-item{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      &-title{
+        width: 160px;
+        text-align: right;
+        font-size: 14px;
+        font-weight: 600;
+        color: #666666;
+        @media all and (max-width: $maxwindow){
+          width: px(160);
+          font-size: px(14);
+        }
+      }
+      &-desc{
+        width: calc(100% - 180px);
+        font-size: 14px;
+        color: #666666;
+        text-align: left;
+        @media all and (max-width: $maxwindow){
+          width: calc(100% - px(180));
+          font-size: px(14);
+        }
+        p{
+          text-align: left;
+          margin-bottom: 0;
+        }
+        a{
+          color: #7EA8F0;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__form{
+    form{
+      margin-top: 40px;
+      @media all and (max-width: $maxwindow){
+        margin-top: px(40);
+      }
+      .button-wrapper{
+        padding-left: 180px;
+        text-align: left;
+        p{
+          text-align: left;
+        }
+        button{
+          border: none;
+        }
+      }
+      label{
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        span:not(.wpcf7-form-control-wrap){
+          width: 160px;
+          text-align: right;
+          font-size: 14px;
+          color: #666666;
+          @media all and (max-width: $maxwindow){
+            width: px(160);
+            font-size: px(14);
+          }
+        }
+        .wpcf7-form-control-wrap{
+          width: calc(100% - 180px);
+          font-size: 14px;
+          color: #666666;
+          text-align: left;
+          @media all and (max-width: $maxwindow){
+            width: calc(100% - px(180));
+            font-size: px(14);
+          }
+          input, textarea{
+            width: 220px;
+            border: 1px solid #CCCCCC;
+            border-radius: 4px;
+            @media all and (max-width: $maxwindow){
+              width: px(220);
+            }
+          }
+        }
+      }
+    }
+    &-title{
+      font-size: 24px;
+      color: #004D80;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      @media all and (max-width: $maxwindow){
+        padding-top: px(20);
+        margin-top: px(30);
+        margin-bottom: px(20);
+      }
+    }
+    &-desc{
+      font-size: 21px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #E5E5E5;
+      @media all and (max-width: $maxwindow){
+        font-size: px(21);
+      }
+    }
+  }
+  &__map{
+    &-title{
+      font-size: 24px;
+      color: #004D80;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      @media all and (max-width: $maxwindow){
+        padding-top: px(20);
+        margin-top: px(30);
+        margin-bottom: px(20);
+      }
+    }
+    &-desc{
+      font-size: 14px;
+      text-align: left;
+      @media all and (max-width: $maxwindow){
+        font-size: px(14);
+      }
+    }
+  }
+}
