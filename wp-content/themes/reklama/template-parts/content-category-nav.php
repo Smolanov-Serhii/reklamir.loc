@@ -11,7 +11,20 @@
     );
     foreach ( $terms as $term ) { ?>
         <div class='services__category'>
-            <h2 class="services__category-name"><?php echo $term->name; ?></h2>
+            <?php
+                $pageurl = get_field('ssylka_na_straniczu_dlya_kategorii', $term->taxonomy . '_' . $term->term_id);
+            ?>
+            <h2 class="services__category-name">
+                <?php
+                    if ($pageurl){
+                        ?>
+                            <a href="<?php echo $pageurl?>"><?php echo $term->name?></a>
+                        <?php
+                    } else {
+                        echo $term->name;
+                    }
+                ?>
+            </h2>
             <?php
             $args = array(
                 'post_type' => 'services',

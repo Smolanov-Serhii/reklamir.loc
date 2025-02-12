@@ -110,6 +110,7 @@
     }
     &-item{
       margin-bottom: 8px;
+      cursor: pointer;
       @media all and (max-width: $maxwindow){
         margin-bottom: px(8);
       }

@@ -23,8 +23,19 @@ $post_id = get_the_ID();
                     <h1 class="services__title section-title">
                         <?php the_title();?>
                     </h1>
-                    <p class="services__subtitle"><span><?php echo get_field('podzagolovok', $post_id)?></span></p>
-                    <div class="services__blick">
+                    <?php
+                        if (get_field('podzagolovok', $post_id)){
+                            ?>
+                            <p class="services__subtitle"><span><?php echo get_field('podzagolovok', $post_id)?></span></p>
+                            <?php
+                        } else {
+                            ?>
+                            <p class="services__subtitle" style="padding: 0"></p>
+                            <?php
+                        }
+                    ?>
+
+                    <div class="services__block">
                         <?php the_content();?>
                     </div>
                     <div class="services__comments">

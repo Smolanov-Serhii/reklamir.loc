@@ -27,6 +27,10 @@
       font-size: 22px;
       margin-bottom: 8px;
       color: #005692;
+      a{
+        text-decoration: none;
+        color: #005692;
+      }
       @media all and (max-width: $maxwindow){
         font-size: px(22);
         margin-bottom: px(8);
@@ -86,6 +90,39 @@
       @media all and (max-width: $maxwindow){
         font-size: px(14);
         line-height: px(20);
+      }
+    }
+    p{
+      //text-indent: 1.5em;
+    }
+    ul{
+      list-style: disc;
+      padding-left: 30px;
+      margin-bottom: 20px;
+      @media all and (max-width: $maxwindow){
+        padding-left: px(30);
+        margin-bottom: px(20);
+      }
+    }
+    ol{
+      list-style: decimal;
+      padding-left: 30px;
+      margin-bottom: 20px;
+      @media all and (max-width: $maxwindow){
+        padding-left: px(30);
+        margin-bottom: px(20);
+      }
+      li{
+        list-style: decimal;
+        text-align: left;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 0;
+        color: #666666;
+        @media all and (max-width: $maxwindow){
+          font-size: px(14);
+          line-height: px(20);
+        }
       }
     }
     span{

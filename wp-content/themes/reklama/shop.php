@@ -1,8 +1,11 @@
 <?php
+/**
+* Template Name: Магазин
+ */
 get_header();
 $post_id = get_the_ID();
 ?>
-    <main class="main">
+	<main class="main">
         <div class="main__breadcrumbs">
             <div class="main-container">
                 <div class="left">
@@ -21,15 +24,15 @@ $post_id = get_the_ID();
                         <?php the_title();?>
                     </h1>
                     <?php
-                    if (get_field('podzagolovok', $post_id)){
-                        ?>
-                        <p class="services__subtitle"><span><?php echo get_field('podzagolovok', $post_id)?></span></p>
-                        <?php
-                    } else {
-                        ?>
-                        <p class="services__subtitle" style="padding: 0"></p>
-                        <?php
-                    }
+                        if (get_field('podzagolovok', $post_id)){
+                            ?>
+                            <p class="services__subtitle"><span><?php echo get_field('podzagolovok', $post_id)?></span></p>
+                            <?php
+                        } else {
+                            ?>
+                            <p class="services__subtitle" style="padding: 0"></p>
+                            <?php
+                        }
                     ?>
 
                     <div class="services__block">
@@ -41,7 +44,7 @@ $post_id = get_the_ID();
                 </div>
             </div>
         </section>
-    </main>
+	</main>
 <?php
 
 get_footer();
